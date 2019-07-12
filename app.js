@@ -34,8 +34,8 @@ app.use(bodyParser.json())
 app.use(cors())
 app.options('*', cors())
 // Routes which should handle requests
-app.use("/user", cors(), userRoutes)
-app.use("/posts", cors(), postsRoutes)
+app.use("/user", userRoutes)
+app.use("/posts", postsRoutes)
 
 app.use((req, res, next) => {
   const error = new Error("Not found")
