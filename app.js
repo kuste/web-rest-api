@@ -10,9 +10,11 @@ const uri = "mongodb+srv://kuste:pass123456@node-rest-api-7y9da.mongodb.net/test
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,content-type, Content-Length, Accept, Authorization")
-  res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET")
+  res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET, OPTIONS")
   if (req.method === "OPTIONS") {
-    return res.status(200).json({})
+    return res.status(200).json({
+      msg: req.method
+    })
   }
   next()
 })
