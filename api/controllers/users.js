@@ -23,7 +23,8 @@ exports.user_signup = (req, res, next) => {
               firstName: req.body.firstName,
               lastName: req.body.lastName,
               email: req.body.email,
-              password: hash
+              password: hash,
+              dateRegisterd: new Date()
             })
             user
               .save()
@@ -111,7 +112,7 @@ exports.user_login = (req, res, next) => {
  */
 exports.user_update = (req, res, next) => {
   const id = req.params.userId
-  console.log(req.body)
+
   if (req.body.password) {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
       if (err) {
