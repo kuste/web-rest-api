@@ -112,7 +112,6 @@ exports.user_login = (req, res, next) => {
  */
 exports.user_update = (req, res, next) => {
   const id = req.params.userId
-
   if (req.body.password) {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
       if (err) {
