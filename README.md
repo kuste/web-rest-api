@@ -1,6 +1,6 @@
 # web-rest-api
-This is the backend of my web project
 ### Author: Ivica Kustura
+#### Description: This is the backend of my web project
 
 # Technologies used:
 * node.js
